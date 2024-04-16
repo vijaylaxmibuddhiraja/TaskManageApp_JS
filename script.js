@@ -122,5 +122,36 @@ const taskManager = {
         this.tasks.splice(taskIndex, 1);
         alert("Task is removed");
         menu();    
-    },   
-}
+    },
+}; 
+    function menu() {
+        const choice = parseInt (
+            prompt (
+                `Please choose an option:\n1. Add Task\n2. Complete Task\n3. List All Tasks\n4. List Completed Tasks\n5. Remove task\n6. Exit `
+            )
+        );
+ // Chosed switch option instead of if-else
+    
+    switch (choice) {
+        case 1:
+         taskManager.addTask();
+        case 2:
+         taskManager.completeTask();
+        case 3:
+         taskManager.listAllTasks();
+        case 4:
+         taskManager.listCompletedTasks();
+        case 5:
+         taskManager.removeTask();
+        case 6:
+         alert("GoodBye! See you again");
+         return;
+        default:
+         alert("Invalid input, please choose between 1-6");
+         menu();
+    }
+ }   
+  
+ // To initialize the app 
+     taskManager.askUserName();
+     menu();
