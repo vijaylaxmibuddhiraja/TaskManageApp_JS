@@ -12,14 +12,14 @@ const taskManager = {
 
     askUserName: function() {
       const userName = prompt("Welcome! Please enter your name");
-      console.log("Welcome! Please enter your name");
+     // console.log("Welcome! Please enter your name");
       if(userName.trim() === "") {
-        console.log("Please enter a valid name");
+       // console.log("Please enter a valid name");
         alert("Please enter a valid name");
         this.askUserName();
       } else {
         this.userName = userName;
-        console.log(`Hello, ${this.userName}! Proceed to the menu`);
+        //console.log(`Hello, ${this.userName}! Proceed to the menu`);
         alert(`Hello, ${this.userName}! Proceed to the menu`);
       }
     },
