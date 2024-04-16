@@ -49,13 +49,11 @@ const taskManager = {
         const taskFound = this.tasks.find((task) => task.id === showTaskId);
 
         if (!taskFound) {
-            alert("Task not found");
-           // return;
-            menu();
-        }
-
-        taskFound.complete = true;
-        alert("Task marked as done!");
+          alert("Task not found");
+        } else {
+          taskFound.complete = true;
+          alert("Task marked as done!");
+        }  
         menu();
     },
     
