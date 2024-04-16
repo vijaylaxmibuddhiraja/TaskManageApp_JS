@@ -50,11 +50,12 @@ const taskManager = {
 
         if (!taskFound) {
             alert("Task not found");
-            return;
+           // return;
+            menu();
         }
 
         taskFound.complete = true;
-        alert("Task msrked as done!");
+        alert("Task marked as done!");
         menu();
     },
     
