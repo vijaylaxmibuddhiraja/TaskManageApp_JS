@@ -67,7 +67,7 @@ const taskManager = {
             this.tasks.forEach((task) => {
                 message +=
                 "Id:" + task.id +
-                 "Description:" + taskDescription +
+                 "Description:" + task.description +
                 "Complete:" + task.complete + "\n";
             });
         }
@@ -89,7 +89,7 @@ const taskManager = {
                 "Id:" +
                 task.id +
                 "Description" +
-                taskDescription +
+                task.description +
                 "Complete:" +
                 task.complete +
                 "\n";
