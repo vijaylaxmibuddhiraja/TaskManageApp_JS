@@ -14,31 +14,27 @@ const taskManager = {
       this.askUserName = prompt("Welcome! Please enter your name");
       if(this.userName.trim() === "") {
         alert("Please enter a valid name");
-        this.askUserName();
+        askUserName();
       } else {
         alert(`Hello, ${this.userName}! Proceed to the menu`);
-       // console.log(`Hello, ${this.userName}! Proceed to the menu`);
       }
     },
 
 // To add tasks
     addTask: function() {
       const taskDescription = prompt("Please add a task description");
-      //console.log("Please add a description");
       if(taskDescription.trim() === "") {
         alert("Task description cannot be empty!");
-       // console.log("Task description cannot be empty!");
         this.addTask();
       }
 // To get new task object 
       const task = {
-        id: taskd ++,
+        id: taskID++,
         description: taskDescription,
         complete: false,
       };
 // To add 'push' is used in task 
       this.tasks.push(task);
-     // console.log("New task added");
       alert("Task is added!");
       menu();
     },
@@ -46,17 +42,14 @@ const taskManager = {
 // To mark the task as completed
     completeTask: function () {
         const showTaskId = parseInt(prompt("Enter the task ID"));
-        //console.log("enter the atsk id", showTaskId);
         const taskFound = this.tasks.find((task) => task.id === showTaskId);
 
         if (!taskFound) {
-            console.log("task not found");
             alert("Task not found");
             return;
         }
 
         taskFound.complete = true;
-        //console.log("task done");
         alert("Task msrked as done!");
         menu();
     },
@@ -70,16 +63,11 @@ const taskManager = {
             message = "Tasks list\n";
             this.tasks.forEach((task) => {
                 message +=
-                "Id:" +
-                task.id +
-                "Description" +
-                taskDescription +
-                "Complete:" +
-                task.complete +
-                "\n";
-            })
+                "Id:" + task.id +
+                 "Description:" + taskDescription +
+                "Complete:" + task.complete + "\n";
+            });
         }
-        //console.log("List of Tasks", message);
         alert(message);
         menu();
     },
@@ -102,7 +90,7 @@ const taskManager = {
                 "Complete:" +
                 task.complete +
                 "\n";
-            })
+            });
         }
         alert(message);
         menu();
