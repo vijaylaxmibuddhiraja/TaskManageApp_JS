@@ -1,4 +1,4 @@
-// TASK MANAGER APPLICATION 
+// TASK MANAGER APPLICATION //
 
 // To assign an initial value taskID is taken 
 
@@ -8,19 +8,17 @@ let taskID = 1;
 
 const taskManager = {
   tasks: [],
-  //userName: "",  //  to store user name
-
+  
     askUserName: function() {
       const userName = prompt("Welcome! Please enter your name");
      // console.log("Welcome! Please enter your name");
-      if(userName.trim() === "") {
-       // console.log("Please enter a valid name");
+      if(userName === "") {
+        //console.log("Please enter a valid name");
         alert("Please enter a valid name");
         this.askUserName();
       } else {
-        this.userName = userName;
-        //console.log(`Hello, ${this.userName}! Proceed to the menu`);
-        alert(`Hello, ${this.userName}! Proceed to the menu`);
+      // console.log(`Hello, ${this.userName}! Proceed to the menu`);
+        alert(`Hello, ${userName}! Proceed to the menu`);
       }
     },
 
@@ -28,6 +26,7 @@ const taskManager = {
     addTask: function() {
       const taskDescription = prompt("Please add a task description");
       if(taskDescription.trim() === "") {
+       // console.log("Task description cannot be empty!");
         alert("Task description cannot be empty!");
         this.addTask();
       }
@@ -39,7 +38,7 @@ const taskManager = {
       };
 // To add 'push' is used in task 
       this.tasks.push(task);
-      alert("Task is added!");
+      //alert("Task is added!");
       menu();
     },
 
@@ -121,25 +120,31 @@ const taskManager = {
                 `Please choose an option:\n1. Add Task\n2. Complete Task\n3. List All Tasks\n4. List Completed Tasks\n5. Remove task\n6. Exit `
             )
         );
- // Chosed switch option instead of if-else
-    
-    switch (choice) {
+
+ // Chose switch option instead of if-else
+     switch (choice) {
         case 1:
          taskManager.addTask();
+         break;
         case 2:
          taskManager.completeTask();
+         break;
         case 3:
          taskManager.listAllTasks();
+         break;
         case 4:
          taskManager.listCompletedTasks();
+         break;
         case 5:
          taskManager.removeTask();
+         break;
         case 6:
          alert("GoodBye! See you again");
          return;
         default:
          alert("Invalid input, please choose between 1-6");
          menu();
+         break;
     }
  }   
   
